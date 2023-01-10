@@ -24,7 +24,7 @@
 									<div class="logo"></div>
 								</a>
 							</li>
-							{% for m in menu %}
+							{% for m in navigation %}
 								{% if not forloop.last %}
 									<li>
 										<a href="{% url m.url_name %}">{{ m.title }}</a>
