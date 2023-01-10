@@ -2,19 +2,19 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse('Системный-администратор')
+    return render(request, 'Системный-администратор')
 
 def demand(request):
-    return HttpResponse('Востребованность')
+    return render(request, 'Востребованность')
 
 def geography(request):
-    return HttpResponse('География')
+    return render(request, 'География')
 
 def skills(request):
-    return HttpResponse('Навыки')
+    return render(request, 'Навыки')
 
 def recent(request):
-    return HttpResponse('Последние вакансии')
+    return render(request, 'Последние вакансии')
 
 def page_not_found(request, exception):
-    return HttpResponseNotFound('Страница не найдена')
+    return render(request, 'Страница не найдена')
