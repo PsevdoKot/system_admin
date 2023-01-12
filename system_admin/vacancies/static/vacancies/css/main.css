@@ -1,0 +1,178 @@
+html {
+  box-sizing: border-box;
+}
+  
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: 'Roboto', sans-serif;
+}
+  
+body {
+  min-width: 1200px;
+  font-weight: 400;
+  color: #444;
+  background-color: azure;
+}
+  
+a {
+  color: #0059b2;
+  text-decoration: none;
+}
+
+a:hover {
+	color: #CC0000;
+	text-decoration: underline;
+}
+  
+img {
+  max-width: 100%;
+}
+  
+/* glob */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.title-reset, .paragraph-reset {
+  margin: 0;
+	font-style: normal;
+}
+  
+.container {
+  max-width: 1920px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* base */	/* base */	/* base */
+/* header */
+.header {
+	background-color:lightskyblue;
+	border-bottom: 3px solid rgb(129, 180, 211);
+}
+
+.header__container {
+	display: flex;
+	flex-direction: row;
+	gap: 100px;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 50px;
+}	
+
+.header__logo {
+	width: 60px;
+	height: 60px;
+}
+
+.header__title {
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.1;
+	font-size: 34px;
+	color:rgb(56, 56, 139);
+}
+
+/* main */
+.main__container {
+	display: flex;
+	flex-direction: row;
+	min-height: calc(100vh - 170px);
+}
+
+.main__left {
+	width: 25%;
+	padding: 75px 20px;
+	background-color: rgb(168, 215, 245);
+	border-left: 3px solid rgb(129, 180, 211);
+	border-right: 3px solid rgb(129, 180, 211);
+}
+
+.main__list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 60px;
+}
+
+.main__item-link {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	font-size: 26px;
+	color: rgb(56, 56, 139);
+}
+
+.main__item--selected .main__item-link {
+	color: rgb(15, 40, 182);
+}
+
+.main__right {
+	width: 100%;
+	padding: 50px 100px;
+	background-color: azure;
+}
+
+/* footer */
+.footer {
+	background-color: lightskyblue;
+	border-top: 3px solid rgb(129, 180, 211);
+}
+
+.footer__container {
+	display: flex;
+	flex-direction: row;
+	gap: 100px;
+	align-items: center;
+	justify-content: center;
+	min-height: 5%;
+	padding: 20px 50px;
+}
+
+.footer__author {
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.1;
+	font-size: 22px;
+	color: rgb(56, 56, 139);
+}
+
+/* content */	/* content */	/* content */
+/* about-content */
+.main__title {
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.1;
+	font-size: 30px;
+}
+
+.main__description {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	font-size: 18	px;
+}
+
+/* demand-content */
+
+
+/* geography-content */
+
+
+/* skills-content */
+
+
+/* recent-content */
+

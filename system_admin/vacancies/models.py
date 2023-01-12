@@ -16,7 +16,7 @@ class Vacancy(models.Model):
         verbose_name = 'Вакансия'
         verbose_name_plural = 'Вакансии'
 
-class Recent_Vacancy(models.Model):
+class RecentVacancy(models.Model):
     name = models.CharField(max_length=200, verbose_name='Название', )
     description = models.TextField(null=True, verbose_name='Описание', )
     key_skills = models.TextField(null=True, verbose_name='Навыки', )
@@ -46,7 +46,8 @@ class Quote(models.Model):
         verbose_name = 'Котировка'
         verbose_name_plural = 'Котировки'
 
-class About_Profession(models.Model):
+class AboutProfession(models.Model):
+    title = models.TextField(null=True, verbose_name='Заголовок', )
     text = models.TextField(null=True, verbose_name='Описание профессии', )
 
     def __str__(self):
@@ -56,7 +57,7 @@ class About_Profession(models.Model):
         verbose_name = 'Описание профессии'
         verbose_name_plural = 'Описание профессии'
 
-class Salary_Info_By_Year(models.Model):
+class SalaryInfoByYear(models.Model):
     year = models.SmallIntegerField(verbose_name='Год', )
     all_vac_level_statistics = models.IntegerField(verbose_name='Уровень зарплат для всех профессий', )
     slctd_vac_level_statistics = models.IntegerField(verbose_name='Уровень зарплат для выбранной профессии', )
@@ -70,7 +71,7 @@ class Salary_Info_By_Year(models.Model):
         verbose_name = 'Статистика по годам'
         verbose_name_plural = 'Статистика по годам'
 
-class Salary_Level_By_City(models.Model):
+class SalaryLevelByCity(models.Model):
     city = models.CharField(max_length=50, verbose_name='Город', )
     all_vacancies_statistics = models.IntegerField(verbose_name='Уровень зарплат для всех профессий', )
 
@@ -81,7 +82,7 @@ class Salary_Level_By_City(models.Model):
         verbose_name = 'Уровень вакансий по городам'
         verbose_name_plural = 'Уровни вакансий по городам'
 
-class Salary_Count_By_City(models.Model):
+class SalaryCountByCity(models.Model):
     city = models.CharField(max_length=50, verbose_name='Город', )
     selected_vacancies_statistics = models.CharField(max_length=20, verbose_name='Количество вакансий для выбранной профессии', )
 
@@ -92,7 +93,7 @@ class Salary_Count_By_City(models.Model):
         verbose_name = 'Уровень вакансий по городам'
         verbose_name_plural = 'Уровни вакансий по городам'
 
-class Key_Skills_Statistics(models.Model):
+class KeySkillsStatistics(models.Model):
     year = models.SmallIntegerField()
     key_skill_1 = models.CharField(max_length=50, verbose_name='Топ 1', )
     key_skill_2 = models.CharField(max_length=50, verbose_name='Топ 2', )

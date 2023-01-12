@@ -1,17 +1,19 @@
 {% extends 'vacancies/base.html' %}
 
 {% block content %}
-	<ul class="list-articles">
-		{% for p in posts %}
+	<h2 class="main__title title-reset">Востребованность профессии по годам</h2>
+	<ul class="main__table-list">
+		{% for statistic in statistics %}
 			<li>
-				<h2>{{ p.title }}</h2>
-				{% autoescape on %}
-					{{ p.content|linebreaks|truncatewords:50 }}
-				{% endautoescape %}
-				<div class="clear"></div>
-				<p class="link-read-post">
-					<a href="{{ p.get_absolute_url }}">Читать пост</a>
-				</p>
+				<h3 class="main__table-title title-reset">{{  }}</h3>
+				<table class="main__table"></table>
+			</li>
+		{% endfor %}
+	</ul>
+	<ul class="main__graph-list">
+		{% for graph in graphs %}
+			<li>
+				<img src="" alt="График статистики по годам" class="main__graph">
 			</li>
 		{% endfor %}
 	</ul>
