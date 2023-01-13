@@ -2,20 +2,11 @@ from django.contrib import admin
 
 from .models import *
 
-class VacancyAdmin(admin.ModelAdmin):
-    list_display = ('name', 'key_skills', 'salary_from', 'salary_to', 'salary', 'area_name', 'published_at')
-    search_fields = ('name', 'key_skills', 'area_name')
-    list_display_links = ('name', )
 
 class RecentVacancyAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'key_skills', 'salary', 'area_name', 'published_at')
     search_fields = ('name', 'key_skills', 'area_name')
     list_display_links = ('name', )
-
-class QuoteAdmin(admin.ModelAdmin):
-    list_display = ('date', 'USD', 'EUR', 'KZT', 'UAH', 'BYR')
-    search_fields = ('date', )
-    list_display_links = ('date', )
 
 class AboutProfessionAdmin(admin.ModelAdmin):
     list_display = ('title', 'text')
@@ -44,9 +35,7 @@ class KeySkillsStatisticsAdmin(admin.ModelAdmin):
                     'key_skill_6', 'key_skill_7', 'key_skill_8', 'key_skill_9', 'key_skill_10')
     list_display_links = ('year', )
 
-admin.site.register(Vacancy, VacancyAdmin)
 admin.site.register(RecentVacancy, RecentVacancyAdmin)
-admin.site.register(Quote, QuoteAdmin)
 admin.site.register(AboutProfession, AboutProfessionAdmin)
 admin.site.register(SalaryInfoByYear, SalaryInfoByYearAdmin)
 admin.site.register(SalaryLevelByCity, SalaryLevelByCityAdmin)

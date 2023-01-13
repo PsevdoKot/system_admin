@@ -1,20 +1,28 @@
 {% extends 'vacancies/base.html' %}
 
+{% load static %}
+
 {% block content %}
 	<h2 class="main__title title-reset">Востребованность профессии по годам</h2>
-	<ul class="main__table-list">
-		{% for statistic in statistics %}
-			<li>
-				<h3 class="main__table-title title-reset">{{  }}</h3>
-				<table class="main__table"></table>
-			</li>
-		{% endfor %}
-	</ul>
-	<ul class="main__graph-list">
-		{% for graph in graphs %}
-			<li>
-				<img src="" alt="График статистики по годам" class="main__graph">
-			</li>
-		{% endfor %}
-	</ul>
+
+	<table class="main__table table1">
+		<thead>
+			<tr>
+				{% for cell in headers %}
+					<th class="table-cell">{{ cell }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in rows %}
+				<tr>
+					{% for cell in row %}
+						<td class="table-cell">{{ cell }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+    </table>
+
+	<img src="" alt="График статистики по годам" class="main__graph">
 {% endblock %}

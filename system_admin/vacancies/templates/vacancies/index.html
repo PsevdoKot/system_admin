@@ -1,14 +1,18 @@
 {% extends 'vacancies/base.html' %}
 
+{% load static %}
+
 {% block content %}
-	<img class="main__img" src="{% static 'vacancies/images/system_admin.png' %}" alt="Системный администратор">
-	<h2 class="main__title title-reset">Что представляет из себя профессия?</h2>
-	{% for p in text %}
+	<img class="main__img" src="{% static 'vacancies/images/system_admin.jpg' %}" alt="Системный администратор" width="70%">
+	{% for p in description %}
 		{% autoescape on %}
-			<p class="main__description paragraph__reset">{{ plinebreaks }}</p>
+			<h2 class="main__title title-reset">{{ p.title }}</h2>
+			<p class="main__description paragraph__reset">{{ p.text|linebreaks }}</p>
 		{% endautoescape %}
 	{% endfor %}
 {% endblock %}
+
+<!-- Что представляет из себя профессия? -->
 
 <!-- Системный администратор — это специалист, который занимается настройкой, совершенствованием и поддержкой ИТ-инфраструктуры компании, включая оборудование, периферию, программное обеспечение и сетевые подключения. Он должен уметь разбираться в любой системе как на аппаратном, так и на программном уровне; администрировать Windows, Linux, отвечать за серверную часть CRM, ERP, сеть и инфраструктуру в целом.
 

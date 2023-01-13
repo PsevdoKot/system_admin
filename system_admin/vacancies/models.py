@@ -1,20 +1,5 @@
 from django.db import models
 
-class Vacancy(models.Model):
-    name = models.CharField(max_length=200, verbose_name='Название', )
-    key_skills = models.TextField(null=True, verbose_name='Навыки', )
-    salary_from = models.CharField(max_length=20, verbose_name='Нижняя вилка оклада', )
-    salary_to = models.CharField(max_length=20, verbose_name='Верхняя вилка оклада', )
-    salary = models.CharField(max_length=20, verbose_name='Оклад', )
-    area_name = models.CharField(max_length=50, verbose_name='Название города', )
-    published_at = models.DateTimeField(verbose_name='Дата публикации', )
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Вакансия'
-        verbose_name_plural = 'Вакансии'
 
 class RecentVacancy(models.Model):
     name = models.CharField(max_length=200, verbose_name='Название', )
@@ -28,27 +13,12 @@ class RecentVacancy(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Вакансия'
-        verbose_name_plural = 'Вакансии'
-
-class Quote(models.Model):
-    date = models.CharField(max_length=10, verbose_name='Дата', )
-    USD = models.FloatField(default=60.66, verbose_name='Доллары', )
-    EUR = models.FloatField(default=59.90, verbose_name='Евро', )
-    KZT = models.FloatField(default=0.13, verbose_name='Тенге', )
-    UAH = models.FloatField(default=1.64, verbose_name='Гривны', )
-    BYR = models.FloatField(default=23.91, verbose_name='Белорусские рубли', )
-
-    def __str__(self):
-        return self.date
-
-    class Meta:
-        verbose_name = 'Котировка'
-        verbose_name_plural = 'Котировки'
+        verbose_name = 'Недавняя вакансия'
+        verbose_name_plural = 'Недавние вакансии'
 
 class AboutProfession(models.Model):
-    title = models.TextField(null=True, verbose_name='Заголовок', )
-    text = models.TextField(null=True, verbose_name='Описание профессии', )
+    title = models.TextField(null=True, verbose_name='Заголовок к тексту', )
+    text = models.TextField(null=True, verbose_name='Текст описания', )
 
     def __str__(self):
         return 'Описание профессии'
@@ -79,8 +49,8 @@ class SalaryLevelByCity(models.Model):
         return self.city
 
     class Meta:
-        verbose_name = 'Уровень вакансий по городам'
-        verbose_name_plural = 'Уровни вакансий по городам'
+        verbose_name = 'Уровень зарплат вакансий по городам'
+        verbose_name_plural = 'Уровни зарплат вакансий по городам'
 
 class SalaryCountByCity(models.Model):
     city = models.CharField(max_length=50, verbose_name='Город', )
@@ -90,8 +60,8 @@ class SalaryCountByCity(models.Model):
         return self.city
 
     class Meta:
-        verbose_name = 'Уровень вакансий по городам'
-        verbose_name_plural = 'Уровни вакансий по городам'
+        verbose_name = 'Число вакансий по городам'
+        verbose_name_plural = 'Число вакансий по городам'
 
 class KeySkillsStatistics(models.Model):
     year = models.SmallIntegerField()

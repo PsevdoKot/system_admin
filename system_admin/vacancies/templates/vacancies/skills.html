@@ -1,18 +1,25 @@
 {% extends 'vacancies/base.html' %}
 
+{% load static %}
+
 {% block content %}
-	<ul class="list-articles">
-		{% for p in posts %}
-			<li>
-				<h2>{{ p.title }}</h2>
-				{% autoescape on %}
-					{{ p.content|linebreaks|truncatewords:50 }}
-				{% endautoescape %}
-				<div class="clear"></div>
-				<p class="link-read-post">
-					<a href="{{ p.get_absolute_url }}">Читать пост</a>
-				</p>
-			</li>
-		{% endfor %}
-	</ul>
+	<h2 class="main__title title-reset">Наиболее часто требуемые навыки по годам</h2>
+	<table class="main__table table1">
+		<thead>
+		    <tr>
+			    {% for cell in headers %}
+					<th class="table-cell1">{{ cell }}</th>
+			    {% endfor %}
+		    </tr>
+		</thead>
+		<tbody>
+		    {% for row in rows %}
+				<tr>
+				    {% for cell in row %}
+						<td class="table-cell1">{{ cell }}</td>
+				    {% endfor %}
+				</tr>
+		    {% endfor %}
+		</tbody>
+    </table>
 {% endblock %}

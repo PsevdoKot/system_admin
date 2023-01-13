@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -8,21 +8,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>{{ title }}</title>
-	<link type="text/css" href="../../static/vacancies/css/normalize.css" rel="stylesheet" />
-	<link type="text/css" href="../../static/vacancies/css/main.css" rel="stylesheet" />
-	<!-- <link type="text/css" href="{% static 'vacancies/css/normalize.css' %}" rel="stylesheet" />
-	<link type="text/css" href="{% static 'vacancies/css/maim.css' %}" rel="stylesheet" />
-	<link rel="shortcut icon" href="{% static 'vacancies/images/logo.png' %}" type="image/x-icon"/> -->
+	<!-- <link type="text/css" href="../../static/vacancies/css/normalize.css" rel="stylesheet" />
+	<link type="text/css" href="../../static/vacancies/css/main.css" rel="stylesheet" /> -->
+	<link type="text/css" href="{% static 'vacancies/css/normalize.css' %}" rel="stylesheet" />
+	<link type="text/css" href="{% static 'vacancies/css/main.css' %}" rel="stylesheet" />
+	<link rel="shortcut icon" href="{% static 'vacancies/images/logo.png' %}" type="image/x-icon"/>
 </head>
 <body>
 	<header class="header">
 		<div class="container">
 			<div class="header__container">
-				<a class="header__logo" href="#">
-					<img src="../../static/vacancies/images/logo.png" alt="Лого"> 
-					<!-- {% static 'vacancies/images/logo.png' %} -->
+				<a class="header__logo" href="{% url 'main' %}">
+					<img src="{% static 'vacancies/images/logo.png' %}" alt="Лого"> 
+					<!-- ../../static/vacancies/images/logo.png -->
 				</a>
-					<!-- <a href="{% url 'main' %}"></a> -->
 				<h1 class="header__title title-reset">Системный администратор</h1>
 			</div>
 		</div>
@@ -35,19 +34,19 @@
 					<nav class="main__navigation">
 						<ul class="main__list list-reset">
 							<li class="main__item main__item--selected">
-								<a class="main__item-link" href="#">Описание</a>
+								<a class="main__item-link" href="{% url 'main' %}">Описание</a>
 							</li>
 							<li class="main__item">
-								<a class="main__item-link" href="#">Востребованность</a>
+								<a class="main__item-link" href="{% url 'demand' %}">Востребованность</a>
 							</li>
 							<li class="main__item">
-								<a class="main__item-link" href="#">География</a>
+								<a class="main__item-link" href="{% url 'geography' %}">География</a>
 							</li>
 							<li class="main__item">
-								<a class="main__item-link" href="#">Навыки</a>
+								<a class="main__item-link" href="{% url 'skills' %}">Навыки</a>
 							</li>
 							<li class="main__item">
-								<a class="main__item-link" href="#">Последние вакансии</a>
+								<a class="main__item-link" href="{% url 'recent' %}">Последние вакансии</a>
 							</li>
 						</ul>
 					</nav>

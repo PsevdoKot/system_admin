@@ -93,7 +93,7 @@ img {
 }
 
 .main__left {
-	width: 25%;
+	width: 30%;
 	padding: 75px 20px;
 	background-color: rgb(168, 215, 245);
 	border-left: 3px solid rgb(129, 180, 211);
@@ -109,7 +109,7 @@ img {
 
 .main__item-link {
 	font-family: inherit;
-	font-weight: 500;
+	font-weight: 700;
 	line-height: 1.1;
 	font-size: 26px;
 	color: rgb(56, 56, 139);
@@ -151,6 +151,11 @@ img {
 
 /* content */	/* content */	/* content */
 /* about-content */
+.main__img {
+	margin-bottom: 30px;
+	border-radius: 20px;
+}
+
 .main__title {
 	font-family: inherit;
 	font-weight: 700;

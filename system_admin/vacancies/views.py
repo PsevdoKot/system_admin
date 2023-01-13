@@ -1,22 +1,43 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
-
-navigation = [ 'Описание', 'Востребованность', 'География', 'Навыки', 'Недавние вакансии', ]
+from vacancies.models import *
 
 def index(request):
-    return render(request, 'vacancies/index.html', { 'title': 'Системный-администратор', 'navigation': navigation, })
+    description = AboutProfession.objects.all()
+    context = {
+        'title': 'Системный-администратор',
+        'description': description,
+    }
+    return render(request, 'vacancies/index.html', context=context)
 
 def demand(request):
-    return render(request, 'vacancies/demand.html', { 'title': 'Востребованность', 'navigation': navigation, })
+    description = AboutProfession.objects.all()
+    context = {
+        'title': 'Востребованность',
+    }
+    return render(request, 'vacancies/demand.html', context=context)
 
 def geography(request):
-    return render(request, 'vacancies/geography.html', { 'title': 'География', 'navigation': navigation, })
+    context = {
+        'title': 'География',
+    }
+    return render(request, 'vacancies/geography.html', context=context)
 
 def skills(request):
-    return render(request, 'vacancies/skills.html', { 'title': 'Навыки', 'navigation': navigation, })
+    context = {
+        'title': 'Навыки',
+    }
+    return render(request, 'vacancies/skills.html', context=context)
 
 def recent(request):
-    return render(request, 'vacancies/recent.html', { 'title': 'Последние вакансии', 'navigation': navigation, })
+    context = {
+        'title': 'Последние вакансии',
+    }
+    return render(request, 'vacancies/recent.html', context=context)
 
 def page_not_found(request, exception):
-    return render(request, 'vacancies/notfound.html', { 'title': 'Страница не найдена', 'navigation': navigation, })
+    context = {
+        'title': 'Страница не найдена',
+        'content_title': 'Страницы с таким адресом не существует'
+    }
+    return render(request, 'vacancies/notfound.html', context=context)
