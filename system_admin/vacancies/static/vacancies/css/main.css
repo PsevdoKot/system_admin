@@ -93,7 +93,7 @@ img {
 }
 
 .main__left {
-	width: 30%;
+	width: 25%;
 	padding: 75px 20px;
 	background-color: rgb(168, 215, 245);
 	border-left: 3px solid rgb(129, 180, 211);
@@ -120,7 +120,7 @@ img {
 }
 
 .main__right {
-	width: 100%;
+	width: 75%;
 	padding: 50px 100px;
 	background-color: azure;
 }
@@ -161,6 +161,7 @@ img {
 	font-weight: 700;
 	line-height: 1.1;
 	font-size: 30px;
+	margin-bottom: 30px;
 }
 
 .main__description {
@@ -170,14 +171,49 @@ img {
 	font-size: 18	px;
 }
 
-/* demand-content */
+/* demand-content  geography-content  skills-content  recent-content */
+.graph-img {
+  margin: 0 auto;
+}
 
+.wrap {
+  position: relative;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+}
 
-/* geography-content */
+.table1, .table2 {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
 
+.big-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
 
-/* skills-content */
+.table1 {
+  width: 100%;
+}
 
+.table2 {
+  display: inline-block;
+  width: 48%;
+}
 
-/* recent-content */
+.table-cell {
+  padding: 8px 8px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+}
 
+.table-cell2 {
+  padding: 8px 30px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+}

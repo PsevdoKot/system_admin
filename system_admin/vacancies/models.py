@@ -18,6 +18,7 @@ class RecentVacancy(models.Model):
 
 class AboutProfession(models.Model):
     title = models.TextField(null=True, verbose_name='Заголовок к тексту', )
+    image = models.ImageField(null=True, default='', upload_to='images/%Y/%m/%d/', verbose_name='Изображения к тексту')
     text = models.TextField(null=True, verbose_name='Текст описания', )
 
     def __str__(self):
@@ -41,6 +42,17 @@ class SalaryInfoByYear(models.Model):
         verbose_name = 'Статистика по годам'
         verbose_name_plural = 'Статистика по годам'
 
+class SalaryInfoByYearGraph(models.Model):
+    graph_title = models.CharField(max_length=50, verbose_name='Название графика')
+    graph = models.ImageField(upload_to='graphs/%Y/%m/%d/', verbose_name='Файл графика')
+
+    def __str__(self):
+        return self.graph_title
+
+    class Meta:
+        verbose_name = 'График статистики по годам'
+        verbose_name_plural = 'Графики статистики по годам'
+
 class SalaryLevelByCity(models.Model):
     city = models.CharField(max_length=50, verbose_name='Город', )
     all_vacancies_statistics = models.IntegerField(verbose_name='Уровень зарплат для всех профессий', )
@@ -62,6 +74,17 @@ class SalaryCountByCity(models.Model):
     class Meta:
         verbose_name = 'Число вакансий по городам'
         verbose_name_plural = 'Число вакансий по городам'
+
+class SalaryInfoByCityGraph(models.Model):
+    graph_title = models.CharField(max_length=50, verbose_name='Название графика')
+    graph = models.ImageField(upload_to='graphs/%Y/%m/%d/', verbose_name='Файл графика')
+
+    def __str__(self):
+        return self.graph_title
+
+    class Meta:
+        verbose_name = 'График статистики по городам'
+        verbose_name_plural = 'Графики статистики по городам'
 
 class KeySkillsStatistics(models.Model):
     year = models.SmallIntegerField()

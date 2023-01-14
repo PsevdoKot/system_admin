@@ -3,23 +3,25 @@
 {% load static %}
 
 {% block content %}
-	<h2 class="main__title title-reset">Наиболее часто требуемые навыки по годам</h2>
-	<table class="main__table table1">
-		<thead>
-		    <tr>
-			    {% for cell in headers %}
-					<th class="table-cell1">{{ cell }}</th>
-			    {% endfor %}
-		    </tr>
-		</thead>
-		<tbody>
-		    {% for row in rows %}
+	<h2 class="main__title title-reset">Часто требуемые навыки для сис.админа по годам</h2>
+	<div class=wrap>
+		<table class="main__table big-table">
+			<thead>
 				<tr>
-				    {% for cell in row %}
-						<td class="table-cell1">{{ cell }}</td>
-				    {% endfor %}
+					{% for cell in headers %}
+						<th class="table-cell">{{ cell }}</th>
+					{% endfor %}
 				</tr>
-		    {% endfor %}
-		</tbody>
-    </table>
+			</thead>
+			<tbody>
+				{% for row in rows %}
+					<tr>
+						{% for cell in row %}
+							<td class="table-cell">{{ cell }}</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 {% endblock %}

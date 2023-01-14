@@ -24,5 +24,7 @@
 		</tbody>
     </table>
 
-	<img src="" alt="График статистики по годам" class="main__graph">
+	{% for graph_url in graph_urls %}
+		<img src="{{ graph_url.url }}" alt="График статистики по годам" class="main__graph graph-img">
+	{% endfor %}
 {% endblock %}
